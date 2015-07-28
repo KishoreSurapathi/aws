@@ -1,9 +1,9 @@
 {
   "AwsTemplateFormatVersion" : "2015-07-28",
-  "Description" : "This is a template for AWS S3 bucket"
+  "Description" : "This is a template for AWS S3 bucket",
   
   
-  "Resourses" : {
+  "Resources" : {
     "S3Bucket" : {
       "Type" : "AWS::S3::Bucket",
       "Properties" : {
