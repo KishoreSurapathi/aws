@@ -1,5 +1,5 @@
 {
-  "AwsTemplateFormatVersion" : "2015-07-28",
+  "AWSTemplateFormatVersion" : "2015-07-28",
   "Description" : "This is a template for AWS S3 bucket",
   
   
