@@ -1,0 +1,34 @@
+{
+  "AwsTemplateFormatVersion" : "2015-07-28",
+  "Description" : "This is a template for AWS S3 bucket"
+  
+  
+  "Resourses" : {
+    "S3Bucket" : {
+      "Type" : "AWS::S3::Bucket",
+      "Properties" : {
+        "AccessControl" : "PublicReadWrite",
+        "BucketName" : "weblogs",
+        "WebsiteConfiguration" : {
+          "IndexDocument" : "index.html",
+          "ErrorDocument" : "error.html"
+        }
+      },
+      "DeletionPolicy" : "Retain"
+    }
+  },
+  
+  "Outputs" : {
+    "WebsiteURL" : {
+      "Value" : { "Fn::GetAtt" : [ "S3Bucket", "WebsiteURL" ] },
+      "Description" : "URL for website hosted on S3"
+    },
+    "S3BucketSecureURL" : {
+      "Value" : { "Fn::Join" : [
+         "", [ "https://", { "Fn::GetAtt" : [ "S3Bucket", "DomainName" ] } ]
+      ] },
+      "Description" : "Name of S3 bucket to hold website content"
+   }
+  }
+  
+}
